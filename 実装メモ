@@ -1,0 +1,22 @@
+<実装すべき部品検討>
+
+1. index.html.erbに表示されるスタートボタンを押下
+    - answerテーブルに新規idを追加(他カラムはnull or 0)
+    - answer.idを使うことで、加算する先のidを特定可能に
+
+2. questionテーブルからquestion_textを抽出 > edit.html.erbに表示
+    - アクションを"edit"にしておくことで、事前に登録していた質問文を抽出
+
+3. edit.html.erbに表示されるYes／Noボタンを押下
+    - Yesの場合、questionテーブルから引っ張り、1.で追加したidの各カラムに加算
+    - Noの場合、処理発生なし
+
+4. 2と3の処理をquestionテーブルのid数(6質問)だけ繰り返し
+    - 想定では、while文とif文を使用
+    - 6回目のYes/No回答後、ループを抜ける
+
+5. 4の処理が6回目が終了
+    - Yes／Noに関わらず、show.html.erbを表示
+    - answerテーブルの各要素のカラムから最も数値が高いカラムを特定(max関数とかありそう)
+    - 特定したカラム名と合致するidをquestionテーブルreleaseカラムから特定
+    - 特定したidのdecision_textカラムのデータを表示

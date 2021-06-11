@@ -1161,3 +1161,196 @@ Completed 200 OK in 20ms (Views: 10.5ms | ActiveRecord: 1.1ms | Allocations: 331
 >>>>>>> 1d64b454c5f7324f3c548557f4a2a002b239e1a4
 
 
+Started GET "/" for ::1 at 2021-05-30 00:45:25 +0900
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3898)
+Completed 200 OK in 33ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 6621)
+
+
+Started GET "/" for ::1 at 2021-05-30 00:45:26 +0900
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1471)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 1884)
+
+
+Started GET "/questions/new" for ::1 at 2021-05-30 00:45:29 +0900
+Processing by QuestionsController#new as HTML
+Completed 404 Not Found in 11ms (ActiveRecord: 0.9ms | Allocations: 1429)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  
+app/controllers/questions_controller.rb:7:in `new'
+Started GET "/questions/new" for ::1 at 2021-05-30 00:51:36 +0900
+Processing by QuestionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1706)
+Completed 200 OK in 24ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 10235)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAnswers (20210605131216)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210605131216"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-06-05 22:46:56 +0900
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3898)
+Completed 200 OK in 43ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 6621)
+
+
+Started GET "/" for ::1 at 2021-06-05 22:46:57 +0900
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 1471)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 1884)
+
+
+Started GET "/questions/new" for ::1 at 2021-06-05 22:47:00 +0900
+Processing by QuestionsController#new as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 3228)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 3309)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.3ms | Allocations: 11224)
+
+
+  
+ActionView::Template::Error (undefined method `question_path' for #<ActionView::Base:0x007fa69a552dd0>
+Did you mean?  questions_path):
+    1: <div class="main_area">
+    2:     <div class="question_area">
+    3:         <% form_with model: @question do |f| %>
+    4:             <%= f.text_field :quesiton_text %>
+    5:             <%= f.submit '回答' %>
+    6:         <% end %>
+  
+app/views/questions/new.html.erb:3
+Started GET "/questions/new" for ::1 at 2021-06-05 22:50:12 +0900
+Processing by QuestionsController#new as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2856)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2936)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 4762)
+
+
+  
+ActionView::Template::Error (undefined method `question_path' for #<ActionView::Base:0x007fa69739bc38>
+Did you mean?  questions_path):
+    1: <div class="main_area">
+    2:     <div class="question_area">
+    3:         <%= form_with model: @question do |f| %>
+    4:             <%= f.text_field :quesiton_text %>
+    5:             <%= f.submit '回答' %>
+    6:         <% end %>
+  
+app/views/questions/new.html.erb:3
+Started GET "/questions/new" for ::1 at 2021-06-05 22:50:14 +0900
+Processing by QuestionsController#new as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2661)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2744)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 3684)
+
+
+  
+ActionView::Template::Error (undefined method `question_path' for #<ActionView::Base:0x007fa6a10906d8>
+Did you mean?  questions_path):
+    1: <div class="main_area">
+    2:     <div class="question_area">
+    3:         <%= form_with model: @question do |f| %>
+    4:             <%= f.text_field :quesiton_text %>
+    5:             <%= f.submit '回答' %>
+    6:         <% end %>
+  
+app/views/questions/new.html.erb:3
+Started GET "/questions/new" for ::1 at 2021-06-05 22:54:03 +0900
+Processing by QuestionsController#new as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2661)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 2743)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 3665)
+
+
+  
+ActionView::Template::Error (undefined method `question_path' for #<ActionView::Base:0x007fa6968e1a68>
+Did you mean?  questions_path):
+    1: <div class="main_area">
+    2:     <div class="question_area">
+    3:         <%= form_with model: @question do |f| %>
+    4:             <%= f.text_field :quesiton_text %>
+    5:             <%= f.submit '回答' %>
+    6:         <% end %>
+  
+app/views/questions/new.html.erb:3
+Started GET "/questions/new" for ::1 at 2021-06-05 22:56:34 +0900
+Processing by QuestionsController#new as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2869)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2949)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms | Allocations: 4616)
+
+
+  
+ActionView::Template::Error (undefined method `question_path' for #<ActionView::Base:0x007fa69a6da720>
+Did you mean?  questions_path):
+    1: <div class="main_area">
+    2:     <div class="question_area">
+    3:         <%= form_for @question do |f| %>
+    4:             <%= f.text_field :quesiton_text %>
+    5:             <%= f.submit '回答' %>
+    6:         <% end %>
+  
+app/views/questions/new.html.erb:3
+Started GET "/questions/new" for ::1 at 2021-06-05 22:59:40 +0900
+Processing by QuestionsController#new as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:7:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 1879)
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.2ms | Allocations: 3586)
+
+
