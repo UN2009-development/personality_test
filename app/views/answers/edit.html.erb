@@ -1,0 +1,15 @@
+<div class="main_area">
+    <div class="question_area">
+        <%= @question.question_text %>
+    </div>
+    <div class="answer_btn">
+        <ul class="answer">
+            <%# はい/いいえを押した後に、次の質問へ移りたい %>
+            <%# はいを押した場合は、answerテーブルに数値を加算したい %>
+            <%= link_to edit_answer_path do %>
+                <li class="list_item">はい</li>
+                <li class="list_item">いいえ</li>
+            <% end %>
+        </ul>
+    </div>
+</div>
