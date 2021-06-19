@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'questions#index'
-    get 'questions' => 'questions#index'
-    get 'questions/new' => 'questions#new'
+  root to: 'answers#new'
+    resources :questions
+    resources :answers
 end
