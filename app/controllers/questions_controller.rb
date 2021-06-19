@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
     def index
     end
 
-    def new
+    def show
         @question = Question.find(1)
     end
 end
