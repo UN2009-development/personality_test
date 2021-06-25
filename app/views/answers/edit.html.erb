@@ -1,15 +1,30 @@
 <div class="main_area">
     <div class="question_area">
         <%= @question.question_text %>
+        <%= @question.question_text %>
+        <%= @question.question_text %>
+        <%= @question.question_text %>
+        <%= @question.question_text %>
+        <%= @question.question_text %>
     </div>
     <div class="answer_btn">
-        <ul class="answer">
-            <%# はい/いいえを押した後に、次の質問へ移りたい %>
-            <%# はいを押した場合は、answerテーブルに数値を加算したい %>
-            <%= link_to edit_answer_path do %>
-                <li class="list_item">はい</li>
-                <li class="list_item">いいえ</li>
-            <% end %>
-        </ul>
+        <%# スコア確認用のため、後で削除 %>
+        あなたのIDは、<%= @answer.id %></br>
+        <%= @answer.enhancer_score + @question.enhancer %></br>
+        <%= @answer.transmuter_score + @question.transmuter %></br>
+        <%= @answer.emitter_score + @question.emitter %></br>
+        <%= @answer.conjurer_score + @question.conjurer %></br>
+        <%= @answer.manipulator_score + @question.manipulator %></br>
+        <%= @answer.specialist_score + @question.specialist %></br>
+        <%# 削除するのはここまで %>
+
+        <%# Viewからupdateアクションを動かしたい %>
+        <%= button_to 'はい', { controller: 'answers', action: 'update'} %>
+
+        <% if @question.next.present? %>
+            <%= link_to 'いいえ', edit_answer_path(@question.next) %>
+        <% else %>
+            <%= link_to 'いいえ', action: :show %>
+        <% end %>
     </div>
 </div>
