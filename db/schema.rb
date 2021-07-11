@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_005829) do
+ActiveRecord::Schema.define(version: 2021_07_06_124647) do
 
   create_table "answers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_005829) do
     t.integer "conjurer_score"
     t.integer "manipulator_score"
     t.integer "specialist_score"
+    t.integer "question_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_005829) do
     t.integer "specialist"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "decision_text"
   end
 
   create_table "temp_answers", force: :cascade do |t|

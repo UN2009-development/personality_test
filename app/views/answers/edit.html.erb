@@ -1,30 +1,24 @@
+</br></br>
+
 <div class="main_area">
     <div class="question_area">
-        <%= @question.question_text %>
-        <%= @question.question_text %>
-        <%= @question.question_text %>
-        <%= @question.question_text %>
-        <%= @question.question_text %>
         <%= @question.question_text %>
     </div>
     <div class="answer_btn">
         <%# スコア確認用のため、後で削除 %>
-        あなたのIDは、<%= @answer.id %></br>
-        <%= @answer.enhancer_score + @question.enhancer %></br>
-        <%= @answer.transmuter_score + @question.transmuter %></br>
-        <%= @answer.emitter_score + @question.emitter %></br>
-        <%= @answer.conjurer_score + @question.conjurer %></br>
-        <%= @answer.manipulator_score + @question.manipulator %></br>
-        <%= @answer.specialist_score + @question.specialist %></br>
+        <%# あなたのIDは、<%= @answer.id %></br>
+        <%#= @answer.enhancer_score %></br>
+        <%#= @answer.transmuter_score %></br>
+        <%#= @answer.emitter_score %></br>
+        <%#= @answer.conjurer_score %></br>
+        <%#= @answer.manipulator_score %></br>
+        <%#= @answer.specialist_score %></br>
         <%# 削除するのはここまで %>
-
-        <%# Viewからupdateアクションを動かしたい %>
-        <%= button_to 'はい', { controller: 'answers', action: 'update'} %>
-
+        <%= button_to 'はい', { controller: 'answers', action: 'update' }, { method: :patch } %>
         <% if @question.next.present? %>
-            <%= link_to 'いいえ', edit_answer_path(@question.next) %>
+            <%= button_to 'いいえ', edit_answer_path(@question.next), method: :get%>
         <% else %>
-            <%= link_to 'いいえ', action: :show %>
+            <%= button_to 'いいえ', { controller: 'answers', action: 'show' }, { method: :get } %>
         <% end %>
     </div>
 </div>
