@@ -1,3 +1,48 @@
-// Place all the styles related to the answers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.main_area{
+    background-color: #fffffe;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.title{
+    margin-top: 50px;
+    color: #272343;
+    text-align: center;
+}
+
+.start_btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    color: #272343;
+    background-color: #ffd803;
+}
+
+.question_area{
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: #272343;
+    text-align: center;
+}
+
+.answer_btn{
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    color: #272343;
+    background-color: #ffd803;
+}
+
+.restart_btn{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    color: #272343;
+    background-color: #ffd803;
+}
