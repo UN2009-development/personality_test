@@ -1,0 +1,34 @@
+<div class="main_area">
+    <div class="question_area">
+        <%= @question.question_text %>
+    </div>
+    <div class="answer_btn">
+        <%# はい/いいえを押した後に、次の質問へ移りたい %>
+        <%# はいを押した場合は、answerテーブルに数値を加算したい %>
+
+        <%=@answer.enhancer_score%>
+        <%=@answer.transmuter_score%>
+        <%=@answer.emitter_score%>
+        <%=@answer.conjurer_score%>
+        <%=@answer.manipulator_score%>
+        <%=@answer.specialist_score%>
+
+        <%=@question.enhancer%>
+        <%=@question.transmuter%>
+        <%=@question.emitter%>
+        <%=@question.conjurer%>
+        <%=@question.manipulator%>
+        <%=@question.specialist%>
+
+
+        <% if @question.next.present? then %>
+            <%= button_to "はい" , answer_path, method: :patch %>
+            <%= button_to "いいえ" , edit_answer_path(@question.next), method: :get %>
+            <%#= link_to "いいえ", edit_answer_path(@question.next)%>
+        <% else %>
+            <%= button_to "はい" , answer_path , method: :patch %>
+            <%= button_to "いいえ", edit_answer_path, method: :get %>
+            <%# link_to "いいえ", answer_path %>
+        <% end %>
+    </div>
+</div>
