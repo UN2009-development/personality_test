@@ -1,0 +1,2 @@
+class TempAnswersController < ApplicationController
+end
