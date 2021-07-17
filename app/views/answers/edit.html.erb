@@ -1,13 +1,13 @@
 <div class="main_area">
     <div class="question_area">
         <%= @question.question_text %>
-        </br></br></br></br></br>
     </div>
-        
-    <%= button_to 'はい', { controller: 'answers', action: 'update' }, { method: :patch , class: "answer_btn" } %>
-    <% if @question.next.present? %>
-        <%= button_to 'いいえ', edit_answer_path(@question.next), method: :get, class: "answer_btn" %>
-    <% else %>
-        <%= button_to 'いいえ', { controller: 'answers', action: 'show' }, { method: :get , class: "answer_btn"  } %>
-    <% end %>
+    <div class="answer_area">
+        <%= button_to 'Yes', { controller: 'answers', action: 'update' }, { method: :patch , class: "answer_btn" } %>
+        <% if @question.next.present? %>
+            <%= button_to 'No', edit_answer_path(@question.next), method: :get, class: "answer_btn" %>
+        <% else %>
+            <%= button_to 'No', { controller: 'answers', action: 'show' }, { method: :get , class: "answer_btn"  } %>
+        <% end %>
+    </div>
 </div>
