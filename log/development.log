@@ -26839,3 +26839,165 @@ Processing by AnswersController#new as HTML
 Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 2221)
 
 
+Started GET "/" for ::1 at 2021-07-17 14:06:49 +0900
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AnswersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering answers/new.html.erb within layouts/application
+  Rendered answers/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 5395)
+Completed 200 OK in 76ms (Views: 29.6ms | ActiveRecord: 1.1ms | Allocations: 16241)
+
+
+Started GET "/" for ::1 at 2021-07-17 14:06:49 +0900
+Processing by AnswersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering answers/new.html.erb within layouts/application
+  Rendered answers/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 1799)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 2234)
+
+
+Started POST "/answers" for ::1 at 2021-07-17 14:06:52 +0900
+Processing by AnswersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Start the test"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/answers_controller.rb:11:in `create'
+  [1m[36mAnswer Create (2.0ms)[0m  [1m[32mINSERT INTO "answers" ("created_at", "updated_at", "enhancer_score", "transmuter_score", "emitter_score", "conjurer_score", "manipulator_score", "specialist_score") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-17 05:06:52.073651"], ["updated_at", "2021-07-17 05:06:52.073651"], ["enhancer_score", 0], ["transmuter_score", 0], ["emitter_score", 0], ["conjurer_score", 0], ["manipulator_score", 0], ["specialist_score", 0]]
+  ↳ app/controllers/answers_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/answers_controller.rb:11:in `create'
+Redirected to http://localhost:3000/answers/1/edit
+Completed 302 Found in 15ms (ActiveRecord: 4.3ms | Allocations: 3326)
+
+
+Started GET "/answers/1/edit" for ::1 at 2021-07-17 14:06:52 +0900
+Processing by AnswersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:17:in `edit'
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/edit.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 1) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 1) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  Rendered answers/edit.html.erb within layouts/application (Duration: 12.0ms | Allocations: 2031)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 3616)
+Completed 200 OK in 49ms (Views: 19.4ms | ActiveRecord: 3.1ms | Allocations: 12610)
+
+
+Started GET "/answers/2/edit" for ::1 at 2021-07-17 14:06:53 +0900
+Processing by AnswersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:17:in `edit'
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/edit.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 2) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 2) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  Rendered answers/edit.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1752)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 3338)
+Completed 200 OK in 29ms (Views: 20.1ms | ActiveRecord: 1.0ms | Allocations: 5008)
+
+
+Started GET "/answers/3/edit" for ::1 at 2021-07-17 14:06:54 +0900
+Processing by AnswersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:17:in `edit'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/edit.html.erb within layouts/application
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 3) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 3) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  Rendered answers/edit.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1764)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 3350)
+Completed 200 OK in 24ms (Views: 17.9ms | ActiveRecord: 0.6ms | Allocations: 5019)
+
+
+Started GET "/answers/4/edit" for ::1 at 2021-07-17 14:06:54 +0900
+Processing by AnswersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:17:in `edit'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/edit.html.erb within layouts/application
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 4) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 4) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  Rendered answers/edit.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1751)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3336)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 1.2ms | Allocations: 4987)
+
+
+Started GET "/answers/5/edit" for ::1 at 2021-07-17 14:06:55 +0900
+Processing by AnswersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:17:in `edit'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/edit.html.erb within layouts/application
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 5) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 5) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  Rendered answers/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1752)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3336)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.6ms | Allocations: 4986)
+
+
+Started GET "/answers/6/edit" for ::1 at 2021-07-17 14:06:56 +0900
+Processing by AnswersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:17:in `edit'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" ORDER BY "answers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/edit.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (id > 6) ORDER BY id ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/question.rb:6:in `next'
+  Rendered answers/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 2673)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.7ms | Allocations: 4322)
+
+
+Started GET "/answers/6" for ::1 at 2021-07-17 14:06:58 +0900
+Processing by AnswersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "answers"."enhancer_score", "answers"."transmuter_score", "answers"."emitter_score", "answers"."conjurer_score", "answers"."manipulator_score", "answers"."specialist_score" FROM "answers"[0m
+  ↳ app/controllers/answers_controller.rb:45:in `show'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:52:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/show.html.erb within layouts/application
+  Rendered answers/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 1786)
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 0.7ms | Allocations: 3517)
+
+
+Started GET "/" for ::1 at 2021-07-17 14:07:01 +0900
+Processing by AnswersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering answers/new.html.erb within layouts/application
+  Rendered answers/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1794)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 2221)
+
+
