@@ -1,8 +1,10 @@
-<div class="top_main_area">
+<div class="main_area">
     <div class="title">
-        <h1>Personality Test</h1>
+        <h1 class="title_name">Personality Test</h1>
     </div>
-    <%= form_with model: @answer do |f| %>
-        <%= f.submit :"Start the test", class: "start_btn"%>
-    <% end %>
+    <div class="top_start_area">
+        <%= form_with model: @answer do |f| %>
+            <%= f.submit :"Start the test", class: "start_btn"%>
+        <% end %>
+    </div>
 </div>

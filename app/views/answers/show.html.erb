@@ -1,10 +1,6 @@
-</br></br>
-
-<div class="decision_area">
-    <%= @question.decision_text %>
+<div class="main_area">
+    <div class="decision_area">
+        <%= @question.decision_text %>
+    </div>
+    <%= link_to 'TopPage →', root_path, class: "restart_btn" %>
 </div>
-
-</br>
-
-
-<%= link_to 'start画面に戻る', root_path, class: "restart_btn" %>
