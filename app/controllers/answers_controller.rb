@@ -50,7 +50,7 @@ class AnswersController < ApplicationController
         
         if max_answer[0] == "enhancer_score"
             @question = Question.find(1)
-        elsif max_answer[0] == "transumuter_score"
+        elsif max_answer[0] == "transmuter_score"
             @question = Question.find(2)
         elsif max_answer[0] == "emitter_score"
             @question = Question.find(3)
